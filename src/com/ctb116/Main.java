@@ -6,27 +6,33 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        final byte MONTHS_IN_YEAR = 12;
+        final byte PERCENT = 100;
+
         System.out.println("Calculate your Mortgage");
 
-        Scanner scanner = new Scanner(System.in);
         //get principal
         System.out.print("Principal: ");
         int principal = scanner.nextInt();
-        //get annual interest
+
+        //get monthly interest
         System.out.print("Annual Interest: ");
         float annualInterest = scanner.nextFloat();
-        //get years
+        float monthlyInterest = (annualInterest / PERCENT) / MONTHS_IN_YEAR;
+
+        //get number of payments
         System.out.print("Period (Years): ");
         short years = scanner.nextShort();
-
-        float monthlyInterest = (annualInterest/100)/12;
-        short months = (short) (years*12);
+        int numberOfPayments = years * MONTHS_IN_YEAR;
 
         //  P( r(1 + r)^n  /  ((1 + r)^n) - 1) )
 
-        double top = monthlyInterest * (Math.pow((1 + monthlyInterest), months));
-        double bottom = (Math.pow((1 + monthlyInterest), months)) - 1;
-        double mortgage = principal * (top / bottom);
+        double mortgage = principal
+                * (monthlyInterest * (Math.pow((1 + monthlyInterest), numberOfPayments)))
+                / ((Math.pow((1 + monthlyInterest), numberOfPayments) - 1));
+
         String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println("Mortgage: " + mortgageFormatted);
 
