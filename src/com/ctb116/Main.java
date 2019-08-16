@@ -1,5 +1,6 @@
 package com.ctb116;
 
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class Main {
@@ -26,8 +27,8 @@ public class Main {
         double top = monthlyInterest * (Math.pow((1 + monthlyInterest), months));
         double bottom = (Math.pow((1 + monthlyInterest), months)) - 1;
         double mortgage = principal * (top / bottom);
-
-        System.out.println(mortgage);
+        String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
+        System.out.println("Mortgage: " + mortgageFormatted);
 
     }
 }
