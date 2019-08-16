@@ -16,7 +16,18 @@ public class Main {
         float annualInterest = scanner.nextFloat();
         //get years
         System.out.print("Period (Years): ");
-        byte period = scanner.nextByte();
-        
+        short years = scanner.nextShort();
+
+        float monthlyInterest = (annualInterest/100)/12;
+        short months = (short) (years*12);
+
+        //  P( r(1 + r)^n  /  ((1 + r)^n) - 1) )
+
+        double top = monthlyInterest * (Math.pow((1 + monthlyInterest), months));
+        double bottom = (Math.pow((1 + monthlyInterest), months)) - 1;
+        double mortgage = principal * (top / bottom);
+
+        System.out.println(mortgage);
+
     }
 }

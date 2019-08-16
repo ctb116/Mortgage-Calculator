@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="016534de-a517-45f3-b266-de9bc9d9931d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MortgageCalculator/com/ctb116/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MortgageCalculator/com/ctb116/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ctb116/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ctb116/Main.java" afterDir="false" />
